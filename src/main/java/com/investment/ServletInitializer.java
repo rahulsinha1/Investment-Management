@@ -1,4 +1,6 @@
-package com.investment.app;
+package com.investment;
+
+
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
