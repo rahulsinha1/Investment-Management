@@ -5,14 +5,16 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
-@Entity(name="user")
-public class User {	
+@Entity(name="customer")
+public class Customer {	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="id",unique=true)
 	private int id;
 	@Column(name="user_name",unique=true)
-	String name;
+	String userName;
 	@Column(name="user_password",unique=false)
 	String userPassword;
 	@Column(name="email",unique=true)
@@ -21,15 +23,43 @@ public class User {
 	String address;
 	@Column(name="phone",unique=true)
 	int phone;
+	@Column(name="token")
+	String token;
+	@Column(name="first_name",unique=false)
+	String firstName;
+	@Column(name="last_name",unique=false)
+	String lastName;
+	public Customer() {
+		super();
+	}
+	public String getFirstName() {
+		return firstName;
+	}
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	public String getLastName() {
+		return lastName;
+	}
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	public String getToken() {
+		return token;
+	}
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+	
 	
 	public int getId() {
 		return id;
 	}
-	public String getName() {
-		return name;
+	public String getUserName() {
+		return userName;
 	}
 	public void setName(String name) {
-		this.name = name;
+		this.userName = name;
 	}
 	public String getUserPassword() {
 		return userPassword;
@@ -57,5 +87,9 @@ public class User {
 	}
 	public void setId(int id) {
 		this.id = id;
+	}
+	public void setToken(String token) {
+		this.token = token;
+		
 	}
 }
