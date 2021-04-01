@@ -6,3 +6,5 @@ Tech Stack:
 Java, Spring Boot, React, REST API, Docker, JPA , AWS Relational Database
 
 Circle Ci Used for CI/CD pipeline: https://app.circleci.com/pipelines/github/rahulsinha1/Investment-Management
+
+Spring Security Token Based authentication used to secure the APIs
